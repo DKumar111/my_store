@@ -131,6 +131,9 @@ main{
 
 
 .main_content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     padding: 10px;
     width: 95%;
     /* background-color: aquamarine; */
@@ -140,6 +143,7 @@ main{
 .card{
     width: 20%;
     height: 20rem;
+    margin: 0.5rem;
     border: 1px solid rgb(207, 206, 206);
     border-radius: 10px;
     
