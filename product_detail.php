@@ -38,13 +38,16 @@ include 'functions/common_function.php';
     </div>
 </header> -->
     <!-- HEADER ENDS HERE -->
-<!-- calling cart function -->
-<?php
-cart();
-?>
+
     <main>
-        <!-- <div class="main_content">
-        <div class="card">
+        <div class="main_content">
+
+            <?php
+            view_details();
+             get_category_products();
+             get_brand_products();
+            ?>
+            <!-- <div class="card">
             <div class="card_img_section">
                 <img class="card_img" src="img/liquid_concentrate.png" alt="card image">
             </div>
@@ -52,9 +55,9 @@ cart();
                 <h3>NAME</h3>
                 <p>description</p>
             </div>
+        </div> -->
         </div>
-    </div> -->
-        <?php   include 'main.php'   ?>
+        <?php  // include 'main.php'   ?>
     </main>
 
     <!-- <div class="footer">

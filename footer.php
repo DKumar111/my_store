@@ -1,3 +1,3 @@
 <div class="footer">
-    <h1>FOOTER</h1>
+    <p class="footer_para">All rights reserved &copy Design by Deepak Kumar - 2024</p>
 </div>

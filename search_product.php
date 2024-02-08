@@ -14,37 +14,37 @@ include 'functions/common_function.php';
 
 <body>
     <!-- HEADER STARTS HERE  -->
-    <?php   include 'header.php'   ?>
-    <!-- <header class ="container" >
+    <?php   //include 'header.php'   ?>
+    <header class ="container" >
     <div class="container_content">
         <div class="logo">
-            BS JAIN&Co.
+            DK&Co.
         </div>
         <div>
             <nav class="nav_list">
-                    <a href="">HOME</a>
+                    <a href="index.php">HOME</a>
                     <a href="">PRODUCT CATEGORIES</a>
-                    <a href="">CONTACT</a>
-                    <a href="">ABOUT US</a>
-                    <a href="">FAQs</a>
+                    <a href="">BRANDS</a>
             </nav>
         </div>
         
             <div class="list_bnt">
+                <form action="" method="get">
+                <input type="search" name="search-value" id="" class="search-input" placeholder="Search">
+                <input type="submit" value="search" name="search-data" class="search-btn">
+            </form>
                 <a class="loginbtn" href="">Login</a>
                 <a class="signupbtn" href="">SignUp</a>
             </div>
         
     </div>
-</header> -->
+</header>
     <!-- HEADER ENDS HERE -->
-<!-- calling cart function -->
-<?php
-cart();
-?>
+
     <main>
-        <!-- <div class="main_content">
-        <div class="card">
+        <div class="main_content">
+       <?php search_product(); ?>
+        <!-- <div class="card">
             <div class="card_img_section">
                 <img class="card_img" src="img/liquid_concentrate.png" alt="card image">
             </div>
@@ -52,9 +52,9 @@ cart();
                 <h3>NAME</h3>
                 <p>description</p>
             </div>
-        </div>
-    </div> -->
-        <?php   include 'main.php'   ?>
+        </div> -->
+    </div>
+        <?php  // include 'main.php'   ?>
     </main>
 
     <!-- <div class="footer">
