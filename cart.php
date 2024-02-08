@@ -57,7 +57,6 @@ cart();
         <div class="main_content">
             <form action="" method="post">
                 <table>
-
                     <thead>
                         <tr>
                             <th>Product Title</th>
@@ -71,37 +70,35 @@ cart();
                     <tbody>
                         <!-- php code to display dynamic data -->
                         <?php
-                        // global $conn;
-                         $ip = getIPAddress();
-                         $total = 0;
-                         $cart_query = "SELECT * FROM `cart_details` WHERE ip_address ='$ip'";
-                         $result = mysqli_query($conn, $cart_query);
-                         while($row=mysqli_fetch_array($result)){
-                             $product_id = $row['product_id'];
-                             $select_product = "SELECT * FROM `products` WHERE product_id = '$product_id'";
-                             $result_product = mysqli_query($conn, $select_product);
-                             while($row_product_price=mysqli_fetch_array($result_product)){
-                                 $product_price = array($row_product_price['product_price']);
-                                 $price_table = $row_product_price['product_price'];
-                                 $product_title = $row_product_price['product_title'];
-                                 $product_image = $row_product_price['product_img1'];
-                                 $product_value = array_sum($product_price);
-                                 $total+= $product_value;
-                             
-
+                          global $conn;
+                          $ip = getIPAddress();
+                          $total = 0;
+                          $cart_query = "SELECT * FROM `cart_details` WHERE ip_address ='$ip'";
+                          $result = mysqli_query($conn, $cart_query);
+                          while($row=mysqli_fetch_array($result)){
+                              $product_id = $row['product_id'];
+                              $select_product = "SELECT * FROM `products` WHERE product_id = '$product_id'";
+                              $result_product = mysqli_query($conn, $select_product);
+                              while($row_product_price=mysqli_fetch_array($result_product)){
+                                  $product_price = array($row_product_price['product_price']);
+                                  $price_table = $row_product_price['product_price'];
+                                  $product_title = $row_product_price['product_title'];
+                                  $product_image = $row_product_price['product_img1'];
+                                  $product_value = array_sum($product_price);
+                                  $total+= $product_value;
                     ?>
                         <tr>
                             <td><?php  echo $product_title; ?></td>
                             <td><img width="150px" height="120px"
                                     src="./admin/product_images/<?php  echo $product_image; ?>" alt=""></td>
-                            <td><input type="number" name="qty"></td>
+                            <td><input type="text" name="qty"></td>
                             <?php
                                 $ip = getIPAddress();
                                 if(isset($_POST['update_cart'])){
                                     $quantity = $_POST['qty'];
-                                    $update_cart = "UPDATE `cart_details` SET `quantity`='$quantity' WHERE ip_address = '$ip'";
+                                    $update_cart = "UPDATE `cart_details` SET quantity = $quantity WHERE ip_address = '$ip'";
                                     $result_product_qty = mysqli_query($conn, $update_cart);
-                                    $total = (int)$total * (int)$quantity;
+                                    $total = $total*$quantity;
                                 }
                             ?>
                             <td><?php  echo $price_table; ?>/-</td>
@@ -122,7 +119,7 @@ cart();
                 <!-- Subtotal -->
                 <div>
                     <h4>Subtotal: <strong><?php  echo $total; ?></strong></h4>
-                    <a href="index.php"><button>Go Home</button></a>
+                    <button><a href="index.php">Go Home</a></button>
                     <a href="#"><button>Checkout</button></a>
                 </div>
             </form>
