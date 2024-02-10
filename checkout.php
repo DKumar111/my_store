@@ -1,0 +1,58 @@
+<?php   
+include '_connectdb.php' ; 
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index_style.css">
+</head>
+
+<body>
+    <!-- HEADER STARTS HERE  -->
+    <header class="container">
+        <div class="container_content">
+            <div class="logo">
+                DK&Co.
+            </div>
+            <div>
+                <nav class="nav_list">
+                    <a href="index.php"  style = "color:white;">HOME</a>
+                    <a href="" style = "color:white;">FAQs</a>
+                </nav>
+            </div>
+
+            <div class="list_bnt">
+                <a class="loginbtn" href="">Login</a>
+                <a class="signupbtn" href="">SignUp</a>
+            </div>
+
+        </div>
+    </header>
+    <!-- HEADER ENDS HERE -->
+
+    <main>
+        <div class="main_content">
+            <?php
+            if(!isset($_SESSION['username'])){
+                include('user_login.php');
+            }else{
+                include('payment.php');
+            }
+            ?>
+        </div>
+    </main>
+
+    <!-- <div class="footer">
+    <h1>FOOTER</h1>
+</div> -->
+
+    <?php   include 'footer.php'   ?>
+
+
+</body>
+
+</html>

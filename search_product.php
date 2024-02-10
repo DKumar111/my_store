@@ -33,7 +33,7 @@ include 'functions/common_function.php';
                 <input type="search" name="search-value" id="" class="search-input" placeholder="Search">
                 <input type="submit" value="search" name="search-data" class="search-btn">
             </form>
-                <a class="loginbtn" href="">Login</a>
+                <a class="loginbtn" href="user_login.php">Login</a>
                 <a class="signupbtn" href="">SignUp</a>
             </div>
         
