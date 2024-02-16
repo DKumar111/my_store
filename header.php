@@ -44,6 +44,12 @@
                         ?>
                     </div>
                 </div>
+                <?php
+                if(isset($_SESSION['username'])){
+                    echo " <a href='profile.php'>PROFILE</a>";
+                }
+                ?>
+               
                 <div class="cart">
                     <a href="cart.php">CART<sup><?php  cart_item();  ?></sup></a>
                     <h5>Total cart price: <?php total_cart_price();  ?></h5>
@@ -56,8 +62,22 @@
                 <input type="search" name="search-value" id="" class="search-input" placeholder="Search">
                 <input type="submit" value="search" name="search-data" class="search-btn">
             </form>
-            <a class="loginbtn" href="user_login.php">Login</a>
-            <a class="signupbtn" href="">SignUp</a>
+            <?php
+                if(!isset($_SESSION['username'])){
+                    echo "<a href=''>Welcome Guest</a>";
+                }else{
+                    echo "<a href='profile.php'>Welcome ".$_SESSION['username']."</a>";
+                }
+
+                if(!isset($_SESSION['username'])){
+                    echo " <a class='loginbtn' href='user_login.php'>Login</a>";
+                    echo " <a class='signupbtn' href='user_registration.php'>SignUp</a>";
+                }else{
+                    echo " <a class='loginbtn' href='user_logout.php'>Logout</a>";
+                }
+
+            ?>
+            
         </div>
 
     </div>

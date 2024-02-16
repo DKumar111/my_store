@@ -1,5 +1,6 @@
 <?php   
 include '_connectdb.php' ; 
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +27,21 @@ include '_connectdb.php' ;
             </div>
 
             <div class="list_bnt">
-                <a class="loginbtn" href="">Login</a>
-                <a class="signupbtn" href="">SignUp</a>
+            <?php
+                if(!isset($_SESSION['username'])){
+                    echo "<a href=''>Welcome Guest</a>";
+                }else{
+                    echo "<a href='#'>Welcome ".$_SESSION['username']."</a>";
+                }
+
+                if(!isset($_SESSION['username'])){
+                    echo " <a class='loginbtn' href='user_login.php'>Login</a>";
+                    echo " <a class='signupbtn' href='user_registration.php'>SignUp</a>";
+                }else{
+                    echo " <a class='loginbtn' href='user_logout.php'>Logout</a>";
+                }
+
+            ?>
             </div>
 
         </div>
@@ -50,7 +64,7 @@ include '_connectdb.php' ;
     <h1>FOOTER</h1>
 </div> -->
 
-    <?php   include 'footer.php'   ?>
+    <?php   //include 'footer.php'   ?>
 
 
 </body>

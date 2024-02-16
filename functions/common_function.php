@@ -318,4 +318,27 @@ function cart_item(){
         }
         echo $total;
     }
+
+    //get user order details
+    function get_user_order_details(){
+        global $conn;
+        $username = $_SESSION['username'];
+        $get_detail = "SELECT * FROM `user_table` WHERE username = '$username'";
+        $result_query = mysqli_query($conn, $get_detail);
+        while($row_query = mysqli_fetch_array($result_query)){
+            $user_id = $row_query['user_id'];
+            if(isset($_GET['pendingOrder'])){
+                $get_order = "SELECT * FROM `user_orders` WHERE user_id = $user_id  AND order_status = 'pending'";
+                $result_orders_query = mysqli_query($conn, $get_order);
+                $row_count = mysqli_num_rows($result_orders_query);
+                if($row_count>0){
+                    echo "<h4 class='text_center text-success mt-5 mb-2 '>You have <span class='text-danger' >$row_count</span> pending orders</h4>
+                    <a href='profile.php?my_order'>Order Details</a>";
+                }else{
+                    echo "<h4 class='text_center text-success mt-5 mb-2 '>You have <span class='text-danger' >0</span> pending orders</h4>
+                    <a href='index.php'>Go Home</a>";
+                }
+            }
+        }
+    }
 ?>

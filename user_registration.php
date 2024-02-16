@@ -1,6 +1,7 @@
 <?php   
 include '_connectdb.php' ; 
 include 'functions/common_function.php';
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -86,6 +87,19 @@ if(isset($_POST['user_register'])){
             }else{
                 die("Connection failed: " . mysqli_connect_error());
             }
+        }
+
+
+        //selecting cart items
+        $select_cart_item = "SELECT * FROM `cart_details` WHERE ip_address = '$ip'";
+        $result_cart = mysqli_query($conn, $select_cart_item);
+        $rows_count = mysqli_num_rows($result_cart);
+        if($rows_count>0){
+            $_SESSION['username'] = $user_name;
+            echo "<script>alert('You have items in your cart')</script>";
+            echo "<script>window.open('checkout.php', '_self')</script>";
+        }else{
+            echo "<script>window.open('index.php', '_self')</script>";
         }
 }
 
