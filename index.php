@@ -10,35 +10,21 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="index_stle.css">
+     
 </head>
 
 <body>
     <!-- HEADER STARTS HERE  -->
     <?php   include 'header.php'   ?>
-    <!-- <header class ="container" >
-    <div class="container_content">
-        <div class="logo">
-            BS JAIN&Co.
-        </div>
-        <div>
-            <nav class="nav_list">
-                    <a href="">HOME</a>
-                    <a href="">PRODUCT CATEGORIES</a>
-                    <a href="">CONTACT</a>
-                    <a href="">ABOUT US</a>
-                    <a href="">FAQs</a>
-            </nav>
-        </div>
-        
-            <div class="list_bnt">
-                <a class="loginbtn" href="">Login</a>
-                <a class="signupbtn" href="">SignUp</a>
-            </div>
-        
-    </div>
-</header> -->
     <!-- HEADER ENDS HERE -->
+    <!-- Banner starts here -->
+    <div class="banner">
+        
+            <!-- <img class="banner-img" src="img/banner.jpg" alt=""> -->
+       
+    </div>
+    <!-- Banner ends here -->
 <!-- calling cart function -->
 <?php
 cart();

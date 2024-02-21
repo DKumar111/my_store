@@ -1,11 +1,11 @@
 
-<header class="container">
+<header class=" container ">
     <div class="container_content">
         <div class="logo">
-            DK&Co.
+                BS JAIN&Co.
         </div>
         <div>
-            <div class="navbar">
+            <div class="navbar ">
                 <a href="index.php">HOME</a>
                 <div class="dropdown">
                     <button class="dropbtn">PRODUCT CATEGORIES
@@ -50,10 +50,10 @@
                 }
                 ?>
                
-                <div class="cart">
+                <!-- <div class="cart"> -->
                     <a href="cart.php">CART<sup><?php  cart_item();  ?></sup></a>
                     <h5>Total cart price: <?php total_cart_price();  ?></h5>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 

@@ -131,11 +131,11 @@ if(isset($_POST['edit_product'])){
         $update_data = "UPDATE `products` SET `product_title`='$product_title',
         `product_price`='$product_price',`product_desc`='$product_desc',`category_id`='$product_category',
         `brand_id`='$product_brand',`product_img1`='$product_img1',`product_img2`='$product_img2',
-        `date`= 'NOW()' WHERE product_id = $edit_id";
+        `date`= NOW() WHERE product_id = $edit_id";
         $result_update = mysqli_query($conn, $update_data);
         if($result_update){
             echo "<script>alert('Product updated successfully!')</script>"; 
-            echo "<script>window.open('admin_index.php','_self')</script>"; 
+            echo "<script>window.open('admin_index.php?view_product','_self')</script>"; 
         }
     }
 

@@ -1,6 +1,7 @@
 <?php   
 include '_connectdb.php' ; 
 include 'functions/common_function.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,64 +10,73 @@ include 'functions/common_function.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="index_stl.css">
+    <link rel="stylesheet" href="product_detail.css">
 </head>
 
 <body>
-    <!-- HEADER STARTS HERE  -->
     <?php   include 'header.php'   ?>
-    <!-- <header class ="container" >
-    <div class="container_content">
-        <div class="logo">
-            BS JAIN&Co.
-        </div>
-        <div>
-            <nav class="nav_list">
-                    <a href="">HOME</a>
-                    <a href="">PRODUCT CATEGORIES</a>
-                    <a href="">CONTACT</a>
-                    <a href="">ABOUT US</a>
-                    <a href="">FAQs</a>
-            </nav>
-        </div>
-        
-            <div class="list_bnt">
-                <a class="loginbtn" href="">Login</a>
-                <a class="signupbtn" href="">SignUp</a>
-            </div>
-        
+    <div class='main-container'>
+        <?php
+    view_details();
+    ?>
     </div>
-</header> -->
-    <!-- HEADER ENDS HERE -->
 
-    <main>
-        <div class="main_content">
+    <div class="h-bar"></div>
 
-            <?php
-            view_details();
-             get_category_products();
-             get_brand_products();
-            ?>
-            <!-- <div class="card">
-            <div class="card_img_section">
-                <img class="card_img" src="img/liquid_concentrate.png" alt="card image">
-            </div>
-            <div class="card_desc">
-                <h3>NAME</h3>
-                <p>description</p>
-            </div>
-        </div> -->
-        </div>
-        <?php  // include 'main.php'   ?>
-    </main>
-
-    <!-- <div class="footer">
-    <h1>FOOTER</h1>
-</div> -->
-
-    <?php   include 'footer.php'   ?>
-
-
+    <div class="suggest-heading">
+        <h3>Related Products</h3>
+    </div>
+    <div class="suggest-items">
+        <?php 
+        if(isset($_GET['product_id'])){
+        if(isset($_GET['category_id'])){
+            $get_product_id = $_GET['product_id'];
+            $category_id = $_GET['category_id'];
+            $select_query = "SELECT * FROM `products` WHERE  category_id = $category_id";
+            $result_query = mysqli_query($conn, $select_query);
+            $num_of_rows =mysqli_num_rows($result_query);
+            if($num_of_rows==0){
+                echo "<h2 class='zero_product'>No stock for this category</h2>";
+            }
+           while($row = mysqli_fetch_assoc($result_query)){
+                $product_id = $row['product_id'];
+                $product_title = $row['product_title'];
+                $product_price = $row['product_price'];
+                $product_desc = $row['product_desc'];
+                $product_image1 = $row['product_img1'];
+                $category_id= $row['category_id'];
+                $brand_id = $row['brand_id'];
+                if($get_product_id == $product_id) continue;
+    
+                echo "
+                <div class='card'>
+                    <a href='product_detail.php?product_id=$product_id&category_id=$category_id'>
+                    <img src='./admin/product_images/$product_image1' alt=''>
+                    </a>
+                    <p>Product Name</p>
+                </div>";
+           }
+        }
+    }
+        ?>
+        <!-- <div class="card">
+        <img src="img/-1_orig.jpeg" alt="">
+        <p>Product Name</p>
+       </div>
+       <div class="card">
+        <img src="img/-1_orig.jpeg" alt="">
+        <p>Product Name</p>
+       </div>
+       <div class="card">
+        <img src="img/-1_orig.jpeg" alt="">
+        <p>Product Name</p>
+       </div>
+       <div class="card">
+        <img src="img/-1_orig.jpeg" alt="">
+        <p>Product Name</p>
+       </div> -->
+    </div>
 </body>
 
 </html>

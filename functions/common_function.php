@@ -22,7 +22,7 @@ function get_products(){
 
         echo "
         <div class='card'>
-        <a href='product_detail.php?product_id=$product_id'>
+        <a href='product_detail.php?product_id=$product_id&category_id=$category_id'>
         <div class='card_img_section'>
             <img class='card_img' src='./admin/product_images/$product_image1' alt='$product_title'>
         </div>
@@ -30,7 +30,7 @@ function get_products(){
         <div class='card_desc'>
             <h3>$product_title</h3>
             <h4>Rs. $product_price/-</h4>
-            <a href='index.php?add_to_cart=$product_id'>Add to cart</a>
+            
         </div>
     </div>
         ";
@@ -195,7 +195,7 @@ function view_details(){
     if(!isset($_GET['category'])){
         if(!isset($_GET['brand'])){
             $product_id = $_GET['product_id'];
-    $select_query = "SELECT * FROM `products` WHERE product_id = $product_id";
+    $select_query = "SELECT * FROM `products` WHERE product_id = $product_id ";
     $result_query = mysqli_query($conn, $select_query);
     while($row = mysqli_fetch_assoc($result_query)){
         $product_id = $row['product_id'];
@@ -206,31 +206,25 @@ function view_details(){
         $product_image2 = $row['product_img2'];
         $category_id= $row['category_id'];
         $brand_id = $row['brand_id'];
-
+ 
         echo "
-        <div class='card'>
-        <div class='card_img_section'>
+        <div class='img_container'>
+        <div class='img'>
             <img class='card_img' src='./admin/product_images/$product_image1' alt='$product_title'>
         </div>
-        <div class='card_desc'>
-            <h3>$product_title</h3>
-            <h4>Rs. $product_price</h4>
-            <a href='index.php?add_to_cart=$product_id'>Add to cart</a>
+        <div class='sub_img'>
+            <img src='./admin/product_images/$product_image1' alt='$product_image1'>
         </div>
     </div>
-
-    <div class=''>
-    <h4>Related image</h4>
-    <div>
-        <div class='card_img_section'>
-            <img class='card_img' src='./admin/product_images/$product_image1' alt='$product_title'>
+    <div class='desc-container'>
+        <div class='desc-content'>
+            <h2>$product_title </h2>
+            <p><span>Description:-</span>Toilet cleaner liquid </p>
+            <p><span>Price:- </span>Rs. $product_price/-</p>
+            <a href='index.php?add_to_cart=$product_id'><button>Add to cart</button></a>
         </div>
-        <div class='card_img_section'>
-            <img class='card_img' src='./admin/product_images/$product_image2' alt='$product_title'>
-        </div>
-    </div>
-</div>
-        ";
+        
+    </div>";
     }
 }
 }
