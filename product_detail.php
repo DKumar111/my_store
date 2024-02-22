@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_stl.css">
+    <link rel="stylesheet" href="index_stle.css">
     <link rel="stylesheet" href="product_detail.css">
 </head>
 
@@ -60,23 +60,9 @@ session_start();
         }
     }
         ?>
-        <!-- <div class="card">
-        <img src="img/-1_orig.jpeg" alt="">
-        <p>Product Name</p>
-       </div>
-       <div class="card">
-        <img src="img/-1_orig.jpeg" alt="">
-        <p>Product Name</p>
-       </div>
-       <div class="card">
-        <img src="img/-1_orig.jpeg" alt="">
-        <p>Product Name</p>
-       </div>
-       <div class="card">
-        <img src="img/-1_orig.jpeg" alt="">
-        <p>Product Name</p>
-       </div> -->
     </div>
+
+    <?php   include 'footer.php'   ?>
 </body>
 
 </html>
