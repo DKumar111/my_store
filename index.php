@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_stle.css">
+    <link rel="stylesheet" href="index_stl.css">
 
 </head>
 
@@ -40,6 +40,8 @@ cart();
 
     function openNav(){
         document.getElementById("mysidenav").style.width = "250px";
+        document.getElementById("mysidenav").style.height = "600px";
+    
     }
 
     function closeNav(){

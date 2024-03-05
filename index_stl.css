@@ -47,7 +47,7 @@ align-items: center;
       position: absolute;
       z-index: 1;
       top: 13%;
-      left: 0;
+      right: 0;
       background-color: #5e5a5a;
       overflow-x: hidden;
       transition: 0.5s;
@@ -126,14 +126,18 @@ align-items: center;
   }
 }
 
+#mysidenav{
+  margin-top: 50px;
+}
 
 @media screen and (min-width:600px) {
   .navbar {
     display: flex;
+    width: 50%;
     justify-content: center;
     align-items: center;
       overflow: hidden;
-      /*  background-color: #333; */
+       /* background-color: #333; */
       font-family: Arial;
       font-weight: bold;
     }
@@ -205,12 +209,13 @@ align-items: center;
       color: white;
      } 
 
-.hamburger img{
+.hamburger{
   display: block;
+
 }
 
 @media screen and (min-width:768px) {
-  .hamburger img{
+  .hamburger{
     display: none;
   }
 }

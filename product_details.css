@@ -56,16 +56,23 @@
 }
 
 .sub_img{
-    width: 100px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(168, 168, 168);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    text-align: start;
+    display: none;
+ 
 
+}
+
+@media screen and (min-width:600px) {
+    .sub_img{
+        width: 100px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(168, 168, 168);
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        text-align: start;
+    }
 }
 
 .sub_img img{
