@@ -17,7 +17,7 @@ include 'functions/common_function.php';
     <header class="container">
         <div class="container_content">
             <div class="logo">
-                DK&Co.
+                <a style="color:white;" href="index.php">BS JAIN&Co.</a>
             </div>
             <div>
                 <div class="navbar">

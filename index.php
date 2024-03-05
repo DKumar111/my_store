@@ -10,14 +10,14 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_stl.css">
+    <link rel="stylesheet" href="index_stle.css">
 
 </head>
 
 <body>
     <?php   include 'header.php'   ?>
     <div class="banner">
-        <!-- <img class="banner-img" src="img/banner.jpg" alt=""> -->
+        <img class="banner-img" height="800px" width="100%" class="banner-img" src="img/banner.jpg" alt="">
     </div>
     <?php
 cart();
@@ -35,5 +35,18 @@ cart();
 
 
 </body>
+
+<script>
+
+    function openNav(){
+        document.getElementById("mysidenav").style.width = "250px";
+    }
+
+    function closeNav(){
+        document.getElementById("mysidenav").style.width = "0";
+    }
+
+ 
+</script>
 
 </html>

@@ -4,29 +4,38 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="logins.css">
 </head>
+
 <body>
-    <div class="register">
+    <div class="login">
         <h1>Login</h1>
         <div class="form">
-            <form action="" method="post" >
-                <label for="username">Username: </label>
-                <input type="text" name="username" id="u_name" placeholder= "Enter your name" autocomplete="off" requitred="required"/><br/><br/>
-
-                <label for="username">Password: </label>
-                <input type="text" name="user_password" id="u_name" placeholder= "Enter your password" autocomplete="off" requitred="required"/><br/><br/>
-
-                <input type="submit" value="Login" name="user_login">
-
+            <form action="" method="post" class="form">
+                <div>
+                    <label for="username">Username: </label>
+                    <input type="text" class="input" name="username" id="u_name" autocomplete="off"
+                        requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Password: </label>
+                    <input type="text" class="input" name="user_password" id="u_name" autocomplete="off"
+                        requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <input type="submit" value="Login" name="user_login">
+                </div>
                 <p>Don't have an account? <a href="user_registration.php">Register</a></p>
             </form>
         </div>
     </div>
 </body>
+
 </html>
 
 <?php

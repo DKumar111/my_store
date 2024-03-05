@@ -10,16 +10,14 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index_stle.css">
+    <link rel="stylesheet" href="index_stl.css">
     <link rel="stylesheet" href="product_detail.css">
 </head>
 
 <body>
     <?php   include 'header.php'   ?>
     <div class='main-container'>
-        <?php
-    view_details();
-    ?>
+        <?php  view_details(); ?>
     </div>
 
     <div class="h-bar"></div>
@@ -64,5 +62,16 @@ session_start();
 
     <?php   include 'footer.php'   ?>
 </body>
+<script>
 
+    function openNav(){
+        document.getElementById("mysidenav").style.width = "250px";
+    }
+
+    function closeNav(){
+        document.getElementById("mysidenav").style.width = "0";
+    }
+
+ 
+</script>
 </html>

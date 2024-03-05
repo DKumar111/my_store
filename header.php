@@ -1,9 +1,12 @@
 <header class=" container ">
     <div class="container_content">
         <div class="logo">
-            BS JAIN&Co.
+            <a style="color:white;" href="index.php">BS JAIN&Co.</a>
         </div>
-            <div class="navbar ">
+
+
+        <div id="mysidenav" class="navbar ">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="index.php">HOME</a>
                 <div class="dropdown">
                     <button class="dropbtn">PRODUCT CATEGORIES
@@ -11,16 +14,6 @@
                     <div class="dropdown-content">
                         <?php
                     get_categories();
-                        //   $select_category = "SELECT * FROM `categories`";
-                        //   $result_category = mysqli_query($conn, $select_category);
-                        //   // $row = mysqli_fetch_assoc($result_brand);
-                        //   // echo $row['brand_title'];
-                        //   while( $row = mysqli_fetch_assoc($result_category)){
-                        //       $category_title = $row['category_title'];
-                        //       $category_id= $row['category_id'];
-                        //       echo "<a href='index.php?category=$category_id'>$category_title</a>";
-                        //   }  
-                        
                         ?>
                     </div>
                 </div>
@@ -43,7 +36,7 @@
                 <a href="cart.php">CART<sup><?php  cart_item();  ?></sup></a>
                 <h5>Total cart price: <?php total_cart_price();  ?></h5>
                 <!-- </div> -->
-            </div>
+        </div>
 
         <div class="list_bnt">
             <form action="search_product.php" method="get">
@@ -52,7 +45,7 @@
             </form>
             <?php
                 if(!isset($_SESSION['username'])){
-                    echo "<a href=''>Welcome Guest</a>";
+                    echo "";
                 }else{
                     echo "<a href='profile.php'>Welcome ".$_SESSION['username']."</a>";
                 }
@@ -63,10 +56,9 @@
                 }else{
                     echo " <a class='loginbtn' href='user_logout.php'>Logout</a>";
                 }
-
             ?>
 
         </div>
-
     </div>
 </header>
+<span class="hamburger" style="font-size: 30px; cursor: pointer;" onclick="openNav()">&#9776;</span>

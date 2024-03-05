@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 55vh;
+    height: 50vh;
+}
+
+.input{
+    width: 14rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 5px;
+}
+
+.login_with_social_media{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* CSS FOR REGISTRATIOIN FORM */
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+
+.register_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 70vh;
+    height: 70vh;
+}
+

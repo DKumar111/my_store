@@ -209,22 +209,22 @@ function view_details(){
  
         echo "
         <div class='img_container'>
-        <div class='img'>
-            <img class='card_img' src='./admin/product_images/$product_image1' alt='$product_title'>
+            <div class='img'>
+                <img class='card_img' src='./admin/product_images/$product_image1' alt='$product_title'>
+            </div>
+            <div class='sub_img'>
+                <img src='./admin/product_images/$product_image1' alt='$product_image1'>
+            </div>
         </div>
-        <div class='sub_img'>
-            <img src='./admin/product_images/$product_image1' alt='$product_image1'>
-        </div>
-    </div>
-    <div class='desc-container'>
-        <div class='desc-content'>
-            <h2>$product_title </h2>
-            <p><span>Description:-</span>Toilet cleaner liquid </p>
-            <p><span>Price:- </span>Rs. $product_price/-</p>
-            <a href='index.php?add_to_cart=$product_id'><button>Add to cart</button></a>
-        </div>
+        <div class='desc-container'>
+            <div class='desc-content'>
+                <h2>$product_title </h2>
+                <p><span>Description:-</span>Toilet cleaner liquid </p>
+                <p><span>Price:- </span>Rs. $product_price/-</p>
+                <a href='index.php?add_to_cart=$product_id'><button>Add to cart</button></a>
+            </div>
         
-    </div>";
+        </div>";
     }
 }
 }

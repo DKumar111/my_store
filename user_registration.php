@@ -11,39 +11,47 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <link rel="stylesheet" href="logins.css">
 </head>
 
 <body>
     <div class="register">
         <h1>Register</h1>
-        <div class="form">
+        <div class="register_form">
             <form action="" method="post">
-                <label for="username">Username: </label>
-                <input type="text" name="username" id="u_name" placeholder="Enter your name" autocomplete="off"
-                    requitred="required" /><br /><br />
-
-                <label for="username">Email: </label>
-                <input type="text" name="user_email" id="u_name" placeholder="Enter your email" autocomplete="off"
-                    requitred="required" /><br /><br />
-
-                <label for="username">Password: </label>
-                <input type="text" name="user_password" id="u_name" placeholder="Enter your password" autocomplete="off"
-                    requitred="required" /><br /><br />
-
-                <label for="username">Confirm Password: </label>
-                <input type="text" name="confirm_user_password" id="u_name" placeholder="Confirm password"
-                    autocomplete="off" requitred="required" /><br /><br />
-
-                <label for="username">Address: </label>
-                <input type="text" name="user_address" id="u_name" placeholder="Enter your address" autocomplete="off"
-                    requitred="required" /><br /><br />
-
-                <label for="username">Mobile: </label>
-                <input type="text" name="user_mobile" id="u_name" placeholder="Enter your mobile number"
-                    autocomplete="off" requitred="required" /><br /><br />
-
-                <input type="submit" value="Register" name="user_register">
-
+                <div class="form_content">
+                    <label for="username">Username: </label>
+                    <input type="text" class="input" name="username" id="u_name" placeholder="Enter your name" autocomplete="off"
+                        requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Email: </label>
+                    <input type="text" class="input" name="user_email" id="u_name" placeholder="Enter your email" autocomplete="off"
+                        requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Password: </label>
+                    <input type="text" class="input" name="user_password" id="u_name" placeholder="Enter your password"
+                        autocomplete="off" requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Confirm Password: </label>
+                    <input type="text" class="input" name="confirm_user_password" id="u_name" placeholder="Confirm password"
+                        autocomplete="off" requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Address: </label>
+                    <input type="text" class="input" name="user_address" id="u_name" placeholder="Enter your address"
+                        autocomplete="off" requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <label for="username">Mobile: </label>
+                    <input type="text" class="input" name="user_mobile" id="u_name" placeholder="Enter your mobile number"
+                        autocomplete="off" requitred="required" /><br /><br />
+                </div>
+                <div>
+                    <input type="submit" value="Register" name="user_register">
+                </div>
                 <p>Already have an account? <a href="user_login.php">Login</a></p>
             </form>
         </div>
